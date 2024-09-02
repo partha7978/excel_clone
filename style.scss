@@ -5,6 +5,7 @@
   --black-color: #000000;
   --white-color: #ffffff;
   --border-color: #d1d1d1;
+  --gray-color: #b7b7b7;
   --light-green-color: #e7f1ec;
   --light-green-hover-color: #a0d8b9;
   --box-shadow1: 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.14);
@@ -30,19 +31,35 @@ html {
   & > .page__action-container {
     height: 6%;
     background-color: var(--background-color);
+
+    @media screen and (max-width: 750px) {
+      overflow-x: scroll;
+    }
   }
   & > .cellProps__action-container {
     height: 8%;
     background-color: var(--background-color);
+
+    @media screen and (max-width: 750px) {
+      overflow-x: scroll;
+    }
   }
 
   & > .formula__action-container {
     height: 6%;
     background-color: var(--background-color);
+
+    // @media screen and (max-width: 750px) {
+    //   overflow-x: scroll;
+    // }
   }
   & > .grid__container {
     height: 74%;
     background-color: var(--white-color);
+
+    @media screen and (max-width: 750px) {
+      overflow-x: scroll;
+    }
   }
   & > .sheet__container {
     height: 6%;
@@ -96,7 +113,7 @@ html {
     border-radius: 8px;
     padding: 0.5rem;
     box-shadow: var(--box-shadow1);
-    
+
     .icon-group {
       display: flex;
       align-items: center;
@@ -118,6 +135,161 @@ html {
         &:hover {
           background-color: var(--light-green-color);
         }
+      }
+    }
+
+    .dropdown {
+      select {
+        border: none;
+        outline: none;
+        background-color: var(--white-color);
+        padding: 0.5rem;
+        border-radius: 5px;
+        box-shadow: var(--box-shadow1);
+        cursor: pointer;
+
+        &:hover {
+          background-color: var(--light-green-color);
+        }
+
+        option {
+          background-color: var(--white-color);
+        }
+      }
+    }
+  }
+}
+
+.formula__action-container  {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 1rem;
+  padding: 0 1rem;
+
+  input.address-bar {
+    border: none;
+    outline: none;
+    background-color: var(--white-color);
+    padding: 0.3rem;
+    border-radius: 5px;
+    max-width: 60px;
+    box-shadow: var(--box-shadow1);
+    cursor: pointer;
+  }
+
+  .formula-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 0.5rem;
+    
+    img {
+      width: 20px;
+      height: 20px;
+
+    }
+
+    input {
+      border: none;
+      outline: none;
+      background-color: var(--white-color);
+      padding: 0.3rem;
+      border-radius: 5px;
+      width: 100%;
+      box-shadow: var(--box-shadow1);
+      cursor: pointer;
+
+      &:hover {
+        background-color: var(--light-green-color);
+      }
+    }
+  }
+}
+
+.grid__container {
+  .top-left__dummy-cell {
+    height: 1.5rem;
+    width: 1.5rem;
+    background-color: var(--gray-color);
+  }
+
+  .address__column-container {
+    height: 15rem;
+    width: 1.5rem;
+    background-color: var(--background-color);
+  }
+}
+
+.sheet__container {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 1rem;
+  padding: 0 1rem;
+  .sheet__folder-container {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    height: 100%;
+    gap: 0.5rem;
+
+    .sheet__folder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.2rem;
+      height: 100%;
+
+      .sheet {
+        cursor: pointer;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        padding: 4px 10px;
+        border-radius: 5px;
+        transition: background-color 0.2s ease-in-out;
+        span {
+          font-size: 16px;
+        }
+
+        &:hover {
+          background-color: var(--light-green-color);
+        }
+
+        &.active {
+          &::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            background-color: var(--green-color); /* Change to your desired color */
+            left: 0;
+            bottom: 3px;
+            transition: width 0.3s ease-in-out;
+          }
+        }
+      }
+    }
+  }
+  .sheet-add-icon {
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+
+    span {
+      transition: all 0.3s ease-in-out;
+    }
+
+    &:hover {
+      background-color: var(--light-green-color);
+
+      span {
+        transform: rotate(45deg);
       }
     }
   }

@@ -44,6 +44,39 @@
               <span class="material-symbols-outlined"> format_underlined </span>
             </div>
           </div>
+          <div class="dropdown">
+            <select
+              name="font-type"
+              id="font-type-dropdown"
+              class="font-dropdown"
+            >
+              <option value="roboto">Roboto</option>
+              <option value="arial">Arial</option>
+              <option value="times-new-roman">Times New Roman</option>
+              <option value="courier-New">Courier New</option>
+              <option value="verdana">Verdana</option>
+              <option value="trebuchet-MS">Trebuchet MS</option>
+              <option value="georgia">Georgia</option>
+              <option value="garamond">Garamond</option>
+            </select>
+          </div>
+          <div class="dropdown">
+            <select
+              name="font-size"
+              id="font-size-dropdown"
+              class="font-dropdown"
+            >
+              <option value="8">8</option>
+              <option value="10">10</option>
+              <option value="12">12</option>
+              <option value="14">14</option>
+              <option value="16">16</option>
+              <option value="18">18</option>
+              <option value="20">20</option>
+              <option value="22">22</option>
+              <option value="24">24</option>
+            </select>
+          </div>
           <div class="icon-group">
             <div class="icon">
               <span class="material-symbols-outlined"> format_align_left </span>
@@ -69,9 +102,37 @@
           </div>
         </div>
       </div>
-      <div class="formula__action-container"></div>
-      <div class="grid__container"></div>
-      <div class="sheet__container"></div>
+      <div class="formula__action-container">
+        <input type="text" name="address-bar" class="address-bar" id="" readonly />
+        <div class="formula-section">
+          <img
+            src="https://img.icons8.com/?size=100&id=62154&format=png&color=000000"
+            alt="formula-icon"
+          />
+          <input type="text" name="formula-bar" id="" />
+        </div>
+      </div>
+      <div class="grid__container">
+        <div class="top-left__dummy-cell"></div>
+        <div class="address__column-container"></div>
+        <div class="address__row-container"></div>
+        <div class="cells__container"></div>
+      </div>
+      <div class="sheet__container">
+        <div class="sheet__folder-container">
+          <div class="sheet__folder">
+            <div class="sheet active" id="sheet1">
+              <span>Sheet 1</span>
+            </div>
+            <div class="sheet" id="sheet2">
+              <span>Sheet 2</span>
+            </div>
+          </div>
+        </div>
+        <div class="sheet-add-icon">
+          <span class="material-symbols-outlined"> add </span>
+        </div>
+      </div>
     </div>
   </body>
 </html>
