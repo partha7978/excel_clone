@@ -151,6 +151,7 @@ html {
         cursor: pointer;
         padding: 4px;
         border-radius: 5px;
+        position: relative;
         transition: background-color 0.2s ease-in-out;
         span {
           font-size: 18px;
@@ -158,6 +159,15 @@ html {
 
         &:hover {
           background-color: var(--light-green-color);
+        }
+
+        input[type="color"] {
+          position: absolute;
+          width: 100%;
+          opacity: 0;
+          top: 0;
+          left: 0;
+          height: 100%;
         }
       }
     }
